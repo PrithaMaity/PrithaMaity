@@ -1,0 +1,71 @@
+{
+  "personal": {
+    "name": "Pritha Maity",
+    "title": "Computer Science Engineer",
+    "profileImage": "/placeholder.svg?height=300&width=300",
+    "location": "Shyampur, Howrah",
+    "phone": "91+ 95648 98683",
+    "email": "prithamaity2001@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/pritha-maity-770116316",
+    "summary": "A high motivated and detail-oriented Computer Science graduate with strong analytical skills and a passion for software development. Proficient in C with experience. Looking for an opportunity to apply technical and problem solving skills in a dynamic work environment."
+  },
+  "education": [
+    {
+      "degree": "Bachelor of Technology (B.Tech) in Computer Science",
+      "institution": "Calcutta Institute of Technology, MAKAUT University",
+      "duration": "2021 - 2025",
+      "cgpa": "7.61",
+      "coursework": ["Data Structure & Algorithm", "Database Management System", "Computer Network"]
+    },
+    {
+      "degree": "Higher Secondary (Class XII)",
+      "institution": "Gujarpur Girl's High school, WBSCTVESD",
+      "duration": "2019 - 2021",
+      "score": "72%",
+      "focus": "Mathematics, Physics and Computer Maintenance and Networking Assistance (CMNT)"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Eventure - Smart Event Management Platform",
+      "description": "Developed a comprehensive event management system that streamlines venue listing, service coordination, participant handling, and progress tracking. Designed for scalability and flexibility, Eventure enhances collaboration between property owners and event organizers, supporting events from private gatherings to large-scale conferences.",
+      "technologies": ["HTML", "CSS", "PHP", "MySQL"],
+      "liveDemo": "#",
+      "repository": "#",
+      "featured": true
+    }
+  ],
+  "skills": {
+    "technical": [
+      { "name": "C" },
+      { "name": "HTML" },
+      { "name": "CSS" },
+      { "name": "MySQL" },
+      { "name": "PHP" },
+      { "name": "GitHub" },
+      { "name": "JavaScript" },
+      { "name": "Python" }
+    ],
+    "soft": ["Teamwork", "Problem-Solving", "Communication", "Time Management"]
+  },
+  "certifications": [
+    {
+      "title": "Web Development Bootcamp",
+      "provider": "thecodehelp.com",
+      "year": "2023",
+      "description": "Gained hands-on experience in web development using HTML, CSS, JavaScript, and Python"
+    },
+    {
+      "title": "Python with Data Structure, JavaScript & HTML5",
+      "provider": "Coursera",
+      "year": "2022",
+      "description": "Learned Python fundamentals, data structures, and web development concepts"
+    }
+  ],
+  "hobbies": [
+    "Exploring new programming frameworks and open-source projects",
+    "Learning new technologies and concepts",
+    "Traveling, cooking, and gardening for creativity and relaxation"
+  ]
+}
