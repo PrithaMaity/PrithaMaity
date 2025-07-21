@@ -3,6 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
+import { useForm, ValidationError } from '@formspree/react'
 import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -32,14 +33,13 @@ interface FormErrors {
 }
 
 export default function Contact({ personal }: ContactProps) {
+  const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORMSPREE_AP_KEY || "")
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     message: "",
   })
   const [errors, setErrors] = useState<FormErrors>({})
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {}
@@ -66,25 +66,18 @@ export default function Contact({ personal }: ContactProps) {
     return Object.keys(newErrors).length === 0
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     if (!validateForm()) {
       return
     }
 
-    setIsSubmitting(true)
-
-    // Simulate form submission
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 2000))
-      setIsSubmitted(true)
-      setFormData({ name: "", email: "", message: "" })
-    } catch (error) {
-      console.error("Error submitting form:", error)
-    } finally {
-      setIsSubmitting(false)
-    }
+    await handleSubmit({
+      name: formData.name,
+      email: formData.email,
+      message: formData.message
+    })
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -97,7 +90,7 @@ export default function Contact({ personal }: ContactProps) {
     }
   }
 
-  if (isSubmitted) {
+  if (state.succeeded) {
     return (
       <section id="contact" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -109,7 +102,7 @@ export default function Contact({ personal }: ContactProps) {
                 <p className="text-gray-700 mb-4">
                   Thank you for reaching out. I'll get back to you as soon as possible.
                 </p>
-                <Button onClick={() => setIsSubmitted(false)} variant="outline">
+                <Button onClick={() => window.location.reload()} variant="outline">
                   Send Another Message
                 </Button>
               </CardContent>
@@ -238,9 +231,9 @@ export default function Contact({ personal }: ContactProps) {
                 <Button
                   type="submit"
                   className="w-full bg-gradient-to-r from-teal-500 to-green-600 hover:from-teal-600 hover:to-green-700 transform transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
-                  disabled={isSubmitting}
+                  disabled={state.submitting}
                 >
-                  {isSubmitting ? (
+                  {state.submitting ? (
                     <>
                       <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
                       Sending...

@@ -2,7 +2,7 @@
   "personal": {
     "name": "Pritha Maity",
     "title": "Computer Science Engineer",
-    "profileImage": "/placeholder.svg?height=300&width=300",
+    "profileImage": "/profile.jpg?height=300&width=300",
     "location": "Shyampur, Howrah",
     "phone": "91+ 95648 98683",
     "email": "prithamaity2001@gmail.com",
@@ -30,9 +30,9 @@
       "id": 1,
       "title": "Eventure - Smart Event Management Platform",
       "description": "Developed a comprehensive event management system that streamlines venue listing, service coordination, participant handling, and progress tracking. Designed for scalability and flexibility, Eventure enhances collaboration between property owners and event organizers, supporting events from private gatherings to large-scale conferences.",
-      "technologies": ["HTML", "CSS", "PHP", "MySQL"],
+      "technologies": ["Strapi", "Next.js", "Postgres", "Tailwind CSS"],
       "liveDemo": "#",
-      "repository": "#",
+      "repository": "https://github.com/PrithaMaity/eventure",
       "featured": true
     }
   ],
@@ -44,8 +44,7 @@
       { "name": "MySQL" },
       { "name": "PHP" },
       { "name": "GitHub" },
-      { "name": "JavaScript" },
-      { "name": "Python" }
+      { "name": "JavaScript" }
     ],
     "soft": ["Teamwork", "Problem-Solving", "Communication", "Time Management"]
   },
